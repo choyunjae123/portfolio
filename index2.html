@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>yj's portfolio</title>
+
+    <!-- 웹페이지 name에 meta tag를 추가-->
+    <meta name="auther" content="yj.cho">
+    <meta name="description" content="세계에서 짱먹는 개발자">
+
+    <!-- 웹페이지의 상단탭에 아이콘을 추가-->
+    <link rel="icon" type="image/png" href="./images/title_icon.png">
+
+    <!-- html에 script.js와 style.css의 링크 걸어주기 -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+
+    <!-- html에 fontawesome의 사용이 가능하도록 변경 -->
+    <script src="https://kit.fontawesome.com/133260cff9.js"></script>
+
+</head>
+
+<body>
+
+    <nav id="section_navbar">
+        <!-- Navbar 시작 -->
+        <section id="navbar">
+            <div class="navbar__logo"> <!--이름을 부여할 때 언더바2개(_ _)를 사용하는 것을 추천 -->
+                <i class="fa-brands fa-connectdevelop"></i> <!-- fontawesome에서 logo를 가져옴 -->
+                <a href="#">yj.cho</a>
+            </div>
+
+            <div class="navbar_action">
+                <ul class="navbar__menu"> <!-- goToScroll()메서드가 클릭 시 실행될 수 있도록 조정. class의 이름을 기준으로 이동. -->
+                    <li class="navbar__menu__item active" onclick="goToScroll('home')">home</li>
+                    <!-- li에 active의 효과를 줌 -->
+                    <li class="navbar__menu__item" onclick="goToScroll('about')">introduce</li>
+                    <li class="navbar__menu__item" onclick="goToScroll('skills')">skill</li>
+                    <li class="navbar__menu__item" onclick="goToScroll('work')">project</li>
+                    <li class="navbar__menu__item" onclick="goToScroll('testimonials')">resume</li>
+                    <li class="navbar__menu__item" onclick="goToScroll('contact')">contact me</li>
+                </ul>
+            </div>
+
+            <!-- 버튼 시작 -->
+            <button class="navbar__toggle-btn" onclick="Menu_active()">
+                <i class="fa-solid fa-burger"></i>
+            </button>
+
+            <!-- Navbar 끝 -->
+        </section>
+    </nav>
+    <!-- 홈 시작 -->
+    <section id="home" class="section">
+        <div class="home__container">
+            <img src="./images/yj_photo.jpg" alt="yj_photo" class="home__avatar">
+            <h1 class="home__title"> </h1>
+            <h2 class="home__description"></h2>
+        </div>
+    </section>
+    <!-- 홈 끝 -->
+
+
+    <!-- 내소개 시작 -->
+    <section id="about" class="section">
+
+        <h1>introduce</h1>
+
+        <p>LLorem ipsum dolor sit a...ctus eius magni! s.</p>
+
+        <div class="about__majors">
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h2 class="major__title">frontend</h2>
+                <div class="major__description">
+                    HTML, CSS, JavaScript, TypeScript, React
+                </div>
+            </div>
+
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <h2 class="major__title">backend</h2>
+                <div class="major__description">
+                    Python, Node.js, Django
+                </div>
+            </div>
+
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h2 class="major__title">AI</h2>
+                <div class="major__description">
+                    data analyze, machine learning, <br>deep learning, Tensorflow, Pytoch
+                </div>
+            </div>
+        </div>
+
+        <div class="about__job">
+            <div class="job">
+                <img src="./images/wooyang2.jpg" alt="wooyang" class="about__jobs__icon">
+                <div class="jobs__description">
+                    <p class="job__name">(주)우양 영업본부 영업2팀</p>
+                    <p class="job__period">2021.07-2022.01</p>
+                </div>
+                <img src="./images/daesang.png" alt="daesang" class="about__jobs__icon">
+                <div class="jobs__description">
+                    <p class="job__name">대상주식회사 소재사업총괄 Global영업본부 BIO영업팀</p>
+                    <p class="job__period">2022.04-2023.01</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 내소개 끝 -->
+
+    <!-- 기술 시작 -->
+    <section id="skills" class="section">
+        <div class="section__container">
+            <h1>technic</h1>
+            <h2>introduce</h2>
+            <p> Lorem ipsum dolor sit a...ctus eius magni! </p>
+
+            <div class="skillset">
+                <div class="skillset__left">
+                    <h3 class="skillset__title">Language</h3>
+
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>JavaScript</span>
+                            <span>3.8%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 3.8%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>DBMS</span>
+                            <span>3.8%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 3.8%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>Python</span>
+                            <span>7.2%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 7.2%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>data analyze</span>
+                            <span>1.2%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 1.2%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill__description">
+                            <span>machine learning/deep learning</span>
+                            <span>3.2%</span>
+                        </div>
+                        <div class="skill__bar">
+                            <div class="skill__value" style="width: 3.2%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="skillset__right">
+
+                    <div class="tools">
+                        <h3 class="skillset__title">Tools</h3>
+                        <ul class="tools__list">
+                            <li><span>Visual Studio Code</span></li>
+                            <li><span>Google Colaboratory</span></li>
+                            <li><span>Pycham</span></li>
+                            <li><span>Jupyter notebook</span></li>
+                            <li><span>Github Desktop</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="etc">
+                        <h3 class="skillset__title">Etc.</h3>
+                        <ul class="etc__list">
+                            <li><span>Math</span></li>
+                            <li><span>English</span></li>
+                            <li><span>Chinese</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 기술 끝 -->
+
+
+    <!-- 프로젝트 시작 -->
+    <section id="work" class="section">
+        <div class="section__container">
+            <h1>workspace</h1>
+            <h3>project</h3>
+
+            <div class="work__categories">
+                <button class="category__btn selected" onclick="ProjectButtonClick('project', this)">
+                    all <span class="category__count all__count"></span>
+                </button>
+                <button class="category__btn" onclick="ProjectButtonClick('front', this)">
+                    front <span class="category__count front__count"></span>
+                </button>
+                <button class="category__btn" onclick="ProjectButtonClick('back', this)">
+                    back <span class="category__count back__count"></span>
+                </button>
+                <button class="category__btn" onclick="ProjectButtonClick('ai', this)">
+                    ai <span class="category__count ai__count"></span>
+                </button>
+            </div>
+
+            <div class="work__projects">
+
+                <a href="#" class="project front" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>youtube clonecoding</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project front" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project2</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project back" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project_3</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project back" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project4</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project back" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project5</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project ai" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project6</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+                <a href="#" class="project ai" target="_blank">
+                    <img src="./" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>project7</h3>
+                        <span>this is chinese</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- 프로젝트 끝 -->
+
+    <!-- 추천서 시작 -->
+    <section id="testimonials" class="section">
+
+        <div class="section__container">
+            <h1>resume</h1>
+            <h3> Lorem ipsum dolor sit a...ctus eius magni! </h3>
+        </div>
+
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="./images/wooyang.png" alt="wooyang" class="testimonial__avatar">
+                <div class="testimonial__speech-bubble">
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, delectus odit magni
+                        repudiandae
+                        dolorum saepe recusandae praesentium! Sequi molestias magni quasi eaque doloremque esse ex?
+                        Reiciendis sed obcaecati eum excepturi!</p>
+                    <p class="name"><a href="#">Mr.ChatGPT</a> / OpenAI </p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="./images/daesang.png" alt="daesang" class="testimonial__avatar">
+                <div class="testimonial__speech-bubble">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iure unde esse quisquam
+                        dolores iusto velit quibusdam harum non vel qui magni, saepe nulla. Accusantium nisi facere
+                        fugit nesciunt animi. </p>
+                    <p class="name"><a href="#">Mr.ChatGPT</a> / OpenAI </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- 추천서 끝 -->
+
+    <!-- Contact 시작 -->
+
+    <section id="contact" class="section">
+        <h1 class="contact__title">contact me</h1>
+        <h2 class="contact__email">junesnever@naver.com</h2>
+        <div class="contact__links">
+
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" target="_blank">
+                <i class="fa-solid fa-blog"></i>
+            </a>
+        </div>
+        <p class="contact__rights">
+            2023 yj.cho - All rights reserved
+        </p>
+    </section>
+
+    <!-- Contact 끝 -->
+
+    <button class="arrow-up" id="arrow-up" onclick="goToScroll('home')">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+    </button>
+</body>
+
+</html>

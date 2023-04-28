@@ -1,0 +1,36 @@
+팀과제.
+
+1. hamburger 버튼을 누르면 menu가 슬라이드로 팝업.
+
+2. 맨 위의 메뉴를 누를 때 슬라이딩되어 해당 섹션으로 이동. (책갈피 사용 x)
+    해당 메뉴가 선택되었다라는 표시 하기.
+    script
+
+3. project의 각 탭에 project 갯수를 표시.
+    탭을 누르면 해당 프로젝트만 표시할 수 있도록.
+
+4. 홈을 벗어나면 화살표버튼이 활성화되고, 화살표 버튼을 누르면 홈으로 이동.
+
+~ 4/18 화 오전 0900까지.
+
+
+
+
+2. 
+        <ul class="navbar__menu">
+            <li class="navbar__menu__item active" onclick="goToScroll('home__container')">home</li> <!-- li에 active의 효과를 줌 -->
+            <li class="navbar__menu__item" onclick="goToScroll('section__introduce')">introduce</li>
+            <li class="navbar__menu__item" onclick="goToScroll('section__technic')">skill</li>
+            <li class="navbar__menu__item" onclick="goToScroll('section__project')">project</li>
+            <li class="navbar__menu__item" onclick="goToScroll('section__resume')">resume</li>
+            <li class="navbar__menu__item" onclick="goToScroll('section__contact')">contact me</li>
+        </ul>
+
+        <script>
+        function goToScroll(name) {     
+            const location = document.querySelector("."+name).offsetTop;
+                window.scrollTo({ 
+                    top: location - 65,
+                behavior: 'smooth'}); 
+        }
+        </script>

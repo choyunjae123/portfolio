@@ -1,0 +1,559 @@
+
+/* 폰트의 지정 */
+@font-face {
+    font-family: 'cjw';
+    src: url('./청정원고딕R.ttf') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* 변수의 지정 */
+:root {
+    --color-white: white;
+    --color-black: black;
+    --color-mypink: #FFFDFF;
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 14px;
+    --font-micro: 12px;
+    --animation-duration: 300ms; /* ms: micro seconds. 300ms:0.3초 */
+    --size-border-radius: border-radius 4px;
+}
+
+
+
+/* 공통 */
+* { box-sizing: border-box;
+}
+body { font-family: 'cjw';
+    text-align: center;
+    margin: 0;
+}
+a { text-decoration: none;  /* 링크를 걸어도 밑줄이 없도록 함. */
+    color: var(--color-mypink); /* 위에서 지정한 white글꼴색의 변수를 사용 */
+}
+ul { padding-left: 0;
+}
+li { list-style: none; /* 앞의 특수문자를 제거 */}
+button { background-color: lightcyan;
+    border: none; /* 테두리 제거 */
+    outline: none; /* 바깥쪽 테두리 제거 */
+    cursor: pointer; /* 커서를 올리면 포인터 모양 */
+}
+h1 { font-size: var(--font-large);
+    font-weight: bold;
+    color: var(--color-black);
+    margin: 16px 0px;
+}
+h2 { font-size: var(--font-medium);
+    color: var(--color-black);
+    margin: 8px 0px;
+}
+h3 { font-size: var(--font-regular);
+    color: var(--color-black);
+    margin: 8px 0px;
+}
+p { font-size: var(--font-regular);
+    color: var(--color-black);
+    margin: 4px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* navbar 디자인 */
+#navbar { position: fixed; /* 포지션의 위치를 고정.(스크롤이 움직여도 가만히 위치) */
+    width: 100%;
+    display: flex; /* 가로로 나란히 배열 */
+    justify-content: space-between; /* 위치하는 방식 */
+    align-items: center; /* 수직으로 중앙 */
+    padding: 16px;
+    background-color: lightblue;
+    transition: all var(--animation-duration) ease-in-out; /* 애니메이션 삽입 (ease-in-out: 속도 조건)*/
+    z-index: 10; /* menu로 사용할 예정이므로, z-index를 부여 */
+}
+#navbar.navbar--bold {  /* navbar에 navbar--bold라는 class가 있는 경우 */
+    background-color: lightblue;
+}
+.navbar__logo {
+    font-weight: bold;
+    color: var(--color-mypink);
+}
+.navbar__logo:hover {
+    border-color: var(--color-white);
+    background-color: var(--color-black);
+}
+.navbar__menu {
+    display: flex;
+    margin: 0;
+}
+
+
+
+.navbar__menu__item {
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: var(--color-white);
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+.navbar__menu__item.active {
+    border-color: var(--color-white);
+    background-color: var(--color-black);
+}
+.navbar__menu__item:hover {
+    border-color: var(--color-white);
+    background-color: var(--color-black);
+}
+.navbar__toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    columns: var(--color-white);
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* home 공통 */
+#home {
+    background-color: lightblue; /* center/cover no-repeat : 배경을 없앰 */
+    padding: 40px;
+    padding-top: 120px;
+    text-align: center;
+}
+.home__avatar {
+    width: 280px;
+}
+.home__contact {
+    columns: var(--color-mypink);
+    font-size: var(--font-regular);
+    font-weight: bold;
+    color: var(--color-mypink);
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-mypink);
+    border-radius: var(--size-border-radius);
+}
+.home__contact:hover {
+    background-color: lightblue;
+}
+
+
+/* section 공통 */
+.section {
+    text-align: center;
+    margin: auto;
+}
+.section__container {
+    max-width: 1200px;
+    padding: 3%;
+    margin: auto;
+}
+
+
+
+/* 내 소개 */
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+.major__icon {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 50px;
+    margin: auto;
+    color: var(--color-mypink);
+    border: 1px solid var(--color-mypink);
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+.major__icon i {
+    color: gray;
+    transition: all var(--animation-duration) ease;
+}
+.major__icon:hover i {
+    color: lightblue;
+    transform: rotate(-30deg) scale(1.1);
+}
+.major__title, .major__description {
+    color: gray;
+}
+.major__description {
+    font-size: var(--font-small);
+}
+.job {
+    display: flex;
+    align-items: center;
+}
+.jobs__description {
+    margin: 0 16px;
+    text-align: left;
+}
+.job__name, .job__period {
+    width: 150px;
+    color: gray;
+    margin-left: 5%;
+}
+.job__name {
+    font-size: var(--font-small);
+}
+.job__period {
+    font-size: var(--font-micro);
+}
+.about__jobs__icon {
+    width: 200px;
+    height: 120px;
+    line-height: 100px;
+    font-size: 50px;
+    margin: auto;
+    color: var(--color-mypink);
+    border: 1px solid var(--color-mypink);
+    border-radius: 5%;
+    margin-bottom: 16px;
+}
+.about__jobs__icon:hover {
+    transition: all var(--animation-duration) ease-in;
+}
+
+/* 기술 */
+#skills {
+    background-color: lightblue;
+}
+.skillset__title {
+    color: var(--color-black);
+}
+.skillset {
+    display: flex;
+    background-color: var(--color-mypink);
+    color: var(--color-black);
+    margin: 20px 0;
+}
+.skillset__left {
+    flex-basis: 60%;
+    background-color: lightblue;
+    padding: 20px 40px;
+    border: 2px solid var(--color-mypink);
+}
+.skill {
+    margin-bottom: 32px;
+}
+.skill__description {
+    display: flex;
+    justify-content: space-between;
+}
+.skill__bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-mypink);
+}
+.skill__value {
+    height: 3px;
+    background-color: lightblue;
+}
+
+.skillset__right {
+    background-color: lightblue;
+    flex-basis: 40%;
+    border: 1px solid var(--color-mypink);
+}
+.tools {
+    padding: 20px;
+    background-color: lightblue;
+    border: 1px solid var(--color-mypink);
+}
+.etc {
+    padding: 20px;
+    border: 1px solid var(--color-mypink);
+}
+
+/* 내 작업실 */
+.work__categories {
+    margin: 40px;
+}
+.category__btn {
+    border: 1px solid var(--color-mypink);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+    color: var(--color-mypink);
+}
+
+.category__btn.selected, .category__btn:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.category__btn.selected .category__count, .category__btn:hover .category__count {
+    opacity: 1;
+    top: 0;
+}
+
+.category__count {
+    background-color: lightblue;
+    border-radius: 50%;
+    color: grey;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    line-height: 24px; /* 정중앙에 글자가 써짐 */
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+}
+
+.project.invisible {
+    display: none;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: lightblue;
+}
+
+.project__img {
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+}
+
+.project__description {
+    position: absolute;
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--animation-duration) ease-in;
+}
+
+.project:hover .project__description {
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__description h3 {
+    font-weight: bold;
+    color: grey;
+}
+
+
+.project__description h3:after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    margin-left: -12px;
+    margin-top: 8px;
+    color: grey;
+    background-color: lightblue;
+}
+
+
+
+/* 추천서 */
+#testimonials{
+    background-color: lightblue;
+}
+
+.testimonials{
+    position: relative;
+    margin: 40px;
+    bottom: 70px;
+}
+
+.testimonial {
+    display: flex;
+    margin: 32px 0;
+}
+
+.testimonial__avatar{
+    width: 120px;
+    height: 80px;
+    line-height: 100px;
+    border-radius: 10%;
+}
+
+.testimonial__avatar:nth-child(odd){
+    margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even){
+    margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+    padding: 18px;
+    background-color: var(--color-mypink);
+}
+
+.testimonial__speech-bubble p {
+    color: black
+}
+
+.testimonial__speech-bubble a {
+    color: black
+}
+
+/* 연락주세요 */
+#contact{
+    background-color: var(--color-mypink);
+}
+
+.contact__title, .contact__email, .contact__rights {
+    color: var(--color-black);
+}
+
+.contact__title{
+    margin: 32px 0;
+}
+
+.contact__links {
+    font-size: var(--font-large);
+    margin: 24px 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.contact__links i:hover {
+    transform: scale(1.1);
+    color: lightblue;
+}
+
+.contact__links i {
+    margin-right: 2%;
+    color: lightblue;
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;    
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    color: black;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: opacity 300ms ease-in;
+}
+.arrow-up.visible {
+    bottom: 20px;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 300ms ease-in;
+}
+
+
+
+.project.none {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+        background-color: transparent;
+    }
+
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu{
+        flex-direction: none;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar__menu.action{
+        position: relative;
+        margin: 0 auto;
+        flex-direction: none;
+        text-align: center;
+        width: 100%;
+        display: block; /*none 에서 block으로 보여주고*/
+    }
+    .navbar_action.action{
+        align-self: center;
+    }
+
+    .navbar__menu.open {
+        display: block;
+    }
+
+    .about__majors {
+        flex-direction: column; /* 세로로 정렬됨 */
+    }
+
+    .major {
+        margin-bottom: 40px;
+    }
+
+    .job {
+        flex-direction: column;
+    }
+
+    .skillset {
+        flex-direction: column; /* 세로로 정렬됨 */
+    }
+
+    .project {
+        flex-grow: 1;
+    }
+
+    .testimonial__avatar{
+    width: 80px;
+    height: 80px;
+    }
+}
